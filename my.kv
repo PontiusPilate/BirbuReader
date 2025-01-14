@@ -1,0 +1,1692 @@
+#:import MDLabel kivymd.uix.label.MDLabel
+#:import MDButton kivymd.uix.button.MDButton
+
+ScreenManager:
+    id: screen_manager
+    MainScreen:
+    FifthFScreen:
+    SixthFScreen:
+    SeventhFScreen:
+    EighthFScreen:
+    NinthFScreen:
+    TenthFScreen:
+    EleventhFScreen:
+    Reader:
+    Config:
+ 
+<CommonHeader>:
+    AnchorLayout:
+        anchor_y: 'top'
+        size_hint_y: None
+        height: dp(40)
+
+        BoxLayout:
+            
+            MDButton:
+                radius: dp(0)
+                size_hint: (None, None)
+                height: dp(40)
+                width: dp(100)
+
+                style: 'filled'
+                theme_bg_color: "Custom"
+                md_bg_color: 0.16, 0.48, 0.32, 1
+
+                on_release:
+                    app.change_screen('config')
+                        
+                MDButtonIcon:
+                    icon: 'cog'
+                    pos_hint: {"center_x": .5, "center_y": .5}
+
+            MDLabel:
+                id: header_label
+
+                text: root.header_text
+                halign: 'center'
+                text_color: 'white'
+                style: 'filled'
+                theme_bg_color: "Custom"
+                md_bg_color: 0.24, 0.71, 0.48, 1
+
+            MDButton:
+                radius: dp(0)
+                size_hint: (None, None)
+                height: dp(40)
+                width: dp(100)
+                pos_hint: {'top': 1}
+
+                style: 'filled'
+                theme_bg_color: "Custom"
+                md_bg_color: 0.16, 0.48, 0.32, 1
+
+                on_release:
+                    app.change_screen('main')
+                        
+                MDButtonText:
+                    text: 'Назад'
+                    theme_text_color: "Custom"
+                    text_color: 'white'
+
+<MainScreen>:
+    name: 'main'
+
+    MDBoxLayout:
+        orientation: 'vertical'
+        md_bg_color: 0.08, 0.25, 0.16, 1
+
+        CommonHeader:
+            id: common_header
+
+            size_hint_y: None
+            height: dp(40)
+
+        BoxLayout:
+            orientation: 'vertical'
+            size_hint: (1, None)
+            height: self.minimum_height
+            padding: dp(30)
+            spacing: dp(50)
+            pos_hint: {"center_x": 0.5, "center_y": 0.5}
+
+            BoxLayout:
+                orientation: 'vertical'
+                spacing: dp(40)
+
+                MDButton:
+                    radius: dp(10)
+                    size_hint: (None, None)
+                    height: 0.07 * root.height
+                    width: 0.5 * root.width
+                    pos_hint: {"center_x": 0.5}
+
+                    style: 'filled'
+                    theme_bg_color: "Custom"
+                    md_bg_color: 0.16, 0.48, 0.32, 1
+
+                    on_release:
+                        app.change_screen('fform')
+
+                    MDButtonText:
+                        text: '5 класс'
+                        text_size: self.size
+                        halign: 'left'
+                        valign: 'middle'
+                        theme_text_color: 'Custom'
+                        text_color: 'white'
+
+                MDButton:
+                    radius: dp(10)
+                    size_hint: (None, None)
+                    height: 0.07 * root.height
+                    width: 0.5 * root.width
+                    pos_hint: {'center_x': 0.5}
+                    text_size: self.size
+                
+                    style: 'filled'
+                    theme_bg_color: "Custom"
+                    md_bg_color: 0.16, 0.48, 0.32, 1
+
+                    on_release:
+                        app.change_screen('siform')
+
+                    MDButtonText:
+                        text: '6 класс'
+                        text_size: self.size
+                        halign: 'center'
+                        valign: 'center'
+                        theme_text_color: 'Custom'
+                        text_color: 'white'
+
+                MDButton:
+                    radius: dp(10)
+                    size_hint: (None, None)
+                    height: 0.07 * root.height
+                    width: 0.5 * root.width
+                    pos_hint: {"center_x": 0.5}
+
+                    style: 'filled'
+                    theme_bg_color: "Custom"
+                    md_bg_color: 0.16, 0.48, 0.32, 1
+
+                    on_release:
+                        app.change_screen('seform')
+
+                    MDButtonText:
+                        text: '7 класс'
+                        text_size: self.size
+                        halign: 'center'
+                        valign: 'center'
+                        theme_text_color: 'Custom'
+                        text_color: 'white'
+
+                MDButton:
+                    radius: dp(10)
+                    size_hint: (None, None)
+                    height: 0.07 * root.height
+                    width: 0.5 * root.width
+                    pos_hint: {"center_x": 0.5}
+
+                    style: 'filled'
+                    theme_bg_color: "Custom"
+                    md_bg_color: 0.16, 0.48, 0.32, 1
+
+                    on_release:
+                        app.change_screen('eiform')
+
+                    MDButtonText:
+                        text: '8 класс'
+                        text_size: self.size
+                        halign: 'center'
+                        valign: 'center'
+                        theme_text_color: 'Custom'
+                        text_color: 'white'
+
+                MDButton:
+                    radius: dp(10)
+                    size_hint: (None, None)
+                    height: 0.07 * root.height
+                    width: 0.5 * root.width
+                    pos_hint: {"center_x": 0.5}
+
+                    style: 'filled'
+                    theme_bg_color: "Custom"
+                    md_bg_color: 0.16, 0.48, 0.32, 1
+
+                    on_release:
+                        app.change_screen('nform')
+
+                    MDButtonText:
+                        text: '9 класс'
+                        text_size: self.size
+                        halign: 'center'
+                        valign: 'center'
+                        theme_text_color: 'Custom'
+                        text_color: 'white'
+
+                MDButton:
+                    radius: dp(10)
+                    size_hint: (None, None)
+                    height: 0.07 * root.height
+                    width: 0.5 * root.width
+                    pos_hint: {"center_x": 0.5}
+
+                    style: 'filled'
+                    theme_bg_color: "Custom"
+                    md_bg_color: 0.16, 0.48, 0.32, 1
+
+                    on_release:
+                        app.change_screen('tform')
+
+                    MDButtonText:
+                        text: '10 класс'
+                        text_size: self.size
+                        halign: 'center'
+                        valign: 'center'
+                        theme_text_color: 'Custom'
+                        text_color: 'white'
+
+                MDButton:
+                    radius: dp(10)
+                    size_hint: (None, None)
+                    height: 0.07 * root.height
+                    width: 0.5 * root.width
+                    pos_hint: {"center_x": 0.5}
+
+                    style: 'filled'
+                    theme_bg_color: "Custom"
+                    md_bg_color: 0.16, 0.48, 0.32, 1
+
+                    on_release:
+                        app.change_screen('elform')
+
+                    MDButtonText:
+                        text: '11 класс'
+                        text_size: self.size
+                        halign: 'center'
+                        valign: 'center'
+                        theme_text_color: 'Custom'
+                        text_color: 'white'
+
+<FifthFScreen>:
+    name: 'fform'
+
+    MDBoxLayout:
+        orientation: 'vertical'
+        md_bg_color: 0.08, 0.25, 0.16, 1
+
+        CommonHeader:
+            id: common_header
+
+            size_hint_y: None
+            height: dp(40)
+
+        BoxLayout:
+            orientation: 'vertical'
+            size_hint: (1, 1)
+            padding: dp(30)
+            spacing: dp(50)
+            pos_hint: {"center_x": 0.5, "center_y": 0.5}
+
+            BoxLayout:
+                orientation: 'vertical'
+                spacing: dp(40)
+
+                theme_text_color: 'Custom'
+                text_color: 'white'
+
+                MDButton:
+                    radius: dp(10)
+                    size_hint: (None, None)
+                    height: 0.07 * root.height
+                    width: 0.5 * root.width
+                    pos_hint: {"center_x": 0.5}
+
+                    style: 'filled'
+                    theme_bg_color: "Custom"
+                    md_bg_color: 0.16, 0.48, 0.32, 1
+
+                    on_release:
+                        app.change_screen('reader'); app.get_data('Гомер, "Одиссея"', 'div', 'BookReadOnlineContent_online_reading__N3rQ8'); app.btn_press()
+
+                    MDButtonText:
+                        text: 'Гомер, "Одиссея"'
+                        text_size: (0.07 * root.height, 0.5 * root.width)
+                        halign: 'center'
+                        valign: 'center'
+
+                MDButton:
+                    radius: dp(10)
+                    size_hint: (None, None)
+                    height: 0.07 * root.height
+                    width: 0.5 * root.width
+                    pos_hint: {'center_x': 0.5}
+                    text_size: self.size
+                
+                    style: 'filled'
+                    theme_bg_color: "Custom"
+                    md_bg_color: 0.16, 0.48, 0.32, 1
+
+                    on_release:
+                        app.change_screen('reader'); app.get_data('"Царевна-лягушка"', 'div', 'BookReadOnlineContent_online_reading__N3rQ8'); app.btn_press()
+
+                    MDButtonText:
+                        text: '"Царевна-лягушка"'
+                        text_size: (0.07 * root.height, 0.5 * root.width)
+                        halign: 'center'
+                        valign: 'center'
+
+                MDButton:
+                    radius: dp(10)
+                    size_hint: (None, None)
+                    height: 0.07 * root.height
+                    width: 0.5 * root.width
+                    pos_hint: {"center_x": 0.5}
+                    text_size: self.size
+
+                    style: 'filled'
+                    theme_bg_color: "Custom"
+                    md_bg_color: 0.16, 0.48, 0.32, 1
+
+                    on_release:
+                        app.change_screen('reader'); app.get_data('"Падчерица"', 'div', 'tale-text si-text'); app.btn_press()
+
+                    MDButtonText:
+                        text: '"Падчерица"'
+                        text_size: (0.07 * root.height, 0.5 * root.width)
+                        halign: 'center'
+                        valign: 'center'
+
+                MDButton:
+                    radius: dp(10)
+                    size_hint: (None, None)
+                    height: 0.07 * root.height
+                    width: 0.5 * root.width
+                    pos_hint: {"center_x": 0.5}
+
+                    style: 'filled'
+                    theme_bg_color: "Custom"
+                    md_bg_color: 0.16, 0.48, 0.32, 1
+
+                    on_release:
+                        app.change_screen('reader'); app.get_data('Эзоп, басни', 'div', 'BookReadOnlineContent_online_reading__N3rQ8'); app.btn_press()
+
+                    MDButtonText:
+                        text: 'Эзоп, басни'
+                        text_size: (0.07 * root.height, 0.5 * root.width)
+                        halign: 'center'
+                        valign: 'center'
+
+                MDButton:
+                    radius: dp(10)
+                    size_hint: (None, None)
+                    height: 0.07 * root.height
+                    width: 0.5 * root.width
+                    pos_hint: {"center_x": 0.5}
+
+                    style: 'filled'
+                    theme_bg_color: "Custom"
+                    md_bg_color: 0.16, 0.48, 0.32, 1
+
+                    on_release:
+                        app.change_screen('reader'); app.get_data('М. Ю Лермонтов, "Бородино"', 'div', 'qPf9A'); app.btn_press()
+
+                    MDButtonText:
+                        text: 'М. Ю Лермонтов, "Бородино"'
+                        text_size: (0.07 * root.height, 0.5 * root.width)
+                        halign: 'center'
+                        valign: 'center'
+
+                MDButton:
+                    radius: dp(10)
+                    size_hint: (None, None)
+                    height: 0.07 * root.height
+                    width: 0.5 * root.width
+                    pos_hint: {"center_x": 0.5}
+
+                    style: 'filled'
+                    theme_bg_color: "Custom"
+                    md_bg_color: 0.16, 0.48, 0.32, 1
+
+                    on_release:
+                        app.change_screen('reader'); app.get_data('И. С. Тургенев, "Муму"', 'div', 't hya'); app.btn_press()
+
+                    MDButtonText:
+                        text: 'И. С. Тургенев, "Муму"'
+                        text_size: (0.07 * root.height, 0.5 * root.width)
+                        halign: 'center'
+                        valign: 'center'
+                        
+                MDButton:
+                    radius: dp(10)
+                    size_hint: (None, None)
+                    height: 0.07 * root.height
+                    width: 0.5 * root.width
+                    pos_hint: {"center_x": 0.5}
+
+                    style: 'filled'
+                    theme_bg_color: "Custom"
+                    md_bg_color: 0.16, 0.48, 0.32, 1
+
+                    on_release:
+                        app.change_screen('reader'); app.get_data('Л. Н. Толстой, "Кавказский пленник"', 'div', 't hya'); app.btn_press()
+
+                    MDButtonText:
+                        text: 'Л. Н. Толстой, "Кавказский пленник"'
+                        text_size: (0.07 * root.height, 0.5 * root.width)
+                        halign: 'left'
+                        valign: 'middle'
+
+<SixthFScreen>:
+    name: 'siform'
+
+    MDBoxLayout:
+        orientation: 'vertical'
+        md_bg_color: 0.08, 0.25, 0.16, 1
+
+        CommonHeader:
+            id: common_header
+
+            size_hint_y: None
+            height: dp(40)
+
+        BoxLayout:
+            orientation: 'vertical'
+            size_hint: (1, 1)
+            padding: dp(30)
+            spacing: dp(50)
+            pos_hint: {"center_x": 0.5, "center_y": 0.5}
+
+            BoxLayout:
+                orientation: 'vertical'
+                spacing: dp(40)
+
+                theme_text_color: 'Custom'
+                text_color: 'white'
+
+                MDButton:
+                    radius: dp(10)
+                    size_hint: (None, None)
+                    height: 0.07 * root.height
+                    width: 0.5 * root.width
+                    pos_hint: {"center_x": 0.5}
+
+                    style: 'filled'
+                    theme_bg_color: "Custom"
+                    md_bg_color: 0.16, 0.48, 0.32, 1
+
+                    on_release:
+                        app.change_screen('reader'); app.get_data('А. С. Пушкин, "Повести Белкина"', 'div', 'BookReadOnlineContent_online_reading__N3rQ8'); app.btn_press()
+
+                    MDButtonText:
+                        text: 'А. С. Пушкин, "Повести Белкина"'
+                        text_size: (0.07 * root.height, 0.5 * root.width)
+                        halign: 'center'
+                        valign: 'center'
+
+                MDButton:
+                    radius: dp(10)
+                    size_hint: (None, None)
+                    height: 0.07 * root.height
+                    width: 0.5 * root.width
+                    pos_hint: {'center_x': 0.5}
+                    text_size: self.size
+                
+                    style: 'filled'
+                    theme_bg_color: "Custom"
+                    md_bg_color: 0.16, 0.48, 0.32, 1
+
+                    on_release:
+                        app.change_screen('reader'); app.get_data('Н. В. Гоголь, "Тарас Бульба"', 'div', 'BookReadOnlineContent_online_reading__N3rQ8'); app.btn_press()
+
+                    MDButtonText:
+                        text: 'Н. В. Гоголь, "Тарас Бульба"'
+                        text_size: (0.07 * root.height, 0.5 * root.width)
+                        halign: 'center'
+                        valign: 'center'
+
+                MDButton:
+                    radius: dp(10)
+                    size_hint: (None, None)
+                    height: 0.07 * root.height
+                    width: 0.5 * root.width
+                    pos_hint: {"center_x": 0.5}
+
+                    style: 'filled'
+                    theme_bg_color: "Custom"
+                    md_bg_color: 0.16, 0.48, 0.32, 1
+
+                    on_release:
+                        app.change_screen('reader'); app.get_data('И. А. Крылов, "Ворона и Лисица"', 'div', 'card'); app.btn_press()
+
+                    MDButtonText:
+                        text: 'И. А. Крылов, "Ворона и Лисица"'
+                        text_size: (0.07 * root.height, 0.5 * root.width)
+                        halign: 'center'
+                        valign: 'center'
+
+                MDButton:
+                    radius: dp(10)
+                    size_hint: (None, None)
+                    height: 0.07 * root.height
+                    width: 0.5 * root.width
+                    pos_hint: {"center_x": 0.5}
+
+                    style: 'filled'
+                    theme_bg_color: "Custom"
+                    md_bg_color: 0.16, 0.48, 0.32, 1
+
+                    on_release:
+                        app.change_screen('reader'); app.get_data('В. М. Шукшин, "Срезал"', 'div', 'article-single-content main-page-content'); app.btn_press()
+
+                    MDButtonText:
+                        text: 'В. М. Шукшин, "Срезал"'
+                        text_size: (0.07 * root.height, 0.5 * root.width)
+                        halign: 'center'
+                        valign: 'center'
+
+                MDButton:
+                    radius: dp(10)
+                    size_hint: (None, None)
+                    height: 0.07 * root.height
+                    width: 0.5 * root.width
+                    pos_hint: {"center_x": 0.5}
+
+                    style: 'filled'
+                    theme_bg_color: "Custom"
+                    md_bg_color: 0.16, 0.48, 0.32, 1
+
+                    on_release:
+                        app.change_screen('reader'); app.get_data('А. П. Чехов, "Каштанка"', 'div', 'BookReadOnlineContent_online_reading__N3rQ8'); app.btn_press()
+
+                    MDButtonText:
+                        text: 'А. П. Чехов, "Каштанка"'
+                        text_size: (0.07 * root.height, 0.5 * root.width)
+                        halign: 'center'
+                        valign: 'center'
+
+                MDButton:
+                    radius: dp(10)
+                    size_hint: (None, None)
+                    height: 0.07 * root.height
+                    width: 0.5 * root.width
+                    pos_hint: {"center_x": 0.5}
+
+                    style: 'filled'
+                    theme_bg_color: "Custom"
+                    md_bg_color: 0.16, 0.48, 0.32, 1
+
+                    on_release:
+                        app.change_screen('reader'); app.get_data('М. Твен, "Приключения Тома Сойера"', 'div', 'BookReadOnlineContent_online_reading__N3rQ8'); app.btn_press()
+
+                    MDButtonText:
+                        text: 'М. Твен, "Приключения Тома Сойера"'
+                        text_size: (0.07 * root.height, 0.5 * root.width)
+                        halign: 'center'
+                        valign: 'center'
+                        
+                MDButton:
+                    radius: dp(10)
+                    size_hint: (None, None)
+                    height: 0.07 * root.height
+                    width: 0.5 * root.width
+                    pos_hint: {"center_x": 0.5}
+
+                    style: 'filled'
+                    theme_bg_color: "Custom"
+                    md_bg_color: 0.16, 0.48, 0.32, 1
+
+                    on_release:
+                        app.change_screen('reader'); app.get_data('Д. Дефо, "Робинзон Крузо"', 'div', 'BookReadOnlineContent_online_reading__N3rQ8'); app.btn_press()
+
+                    MDButtonText:
+                        text: 'Д. Дефо, "Робинзон Крузо"'
+                        text_size: (0.07 * root.height, 0.5 * root.width)
+                        halign: 'left'
+                        valign: 'middle' 
+
+<SeventhFScreen>:
+    name: 'seform'
+
+    MDBoxLayout:
+        orientation: 'vertical'
+        md_bg_color: 0.08, 0.25, 0.16, 1
+
+        CommonHeader:
+            id: common_header
+
+            size_hint_y: None
+            height: dp(40)
+
+        BoxLayout:
+            orientation: 'vertical'
+            size_hint: (1, 1)
+            padding: dp(30)
+            spacing: dp(50)
+            pos_hint: {"center_x": 0.5, "center_y": 0.5}
+
+            BoxLayout:
+                orientation: 'vertical'
+                spacing: dp(40)
+
+                theme_text_color: 'Custom'
+                text_color: 'white'
+
+                MDButton:
+                    radius: dp(10)
+                    size_hint: (None, None)
+                    height: 0.07 * root.height
+                    width: 0.5 * root.width
+                    pos_hint: {"center_x": 0.5}
+
+                    style: 'filled'
+                    theme_bg_color: "Custom"
+                    md_bg_color: 0.16, 0.48, 0.32, 1
+
+                    on_release:
+                        app.change_screen('reader'); app.get_data('Н. В. Гоголь, "Шинель"', 'div', 'BookReadOnlineContent_online_reading__N3rQ8'); app.btn_press()
+
+                    MDButtonText:
+                        text: 'Н. В. Гоголь, "Шинель"'
+                        text_size: (0.07 * root.height, 0.5 * root.width)
+                        halign: 'center'
+                        valign: 'center'
+
+                MDButton:
+                    radius: dp(10)
+                    size_hint: (None, None)
+                    height: 0.07 * root.height
+                    width: 0.5 * root.width
+                    pos_hint: {'center_x': 0.5}
+                    text_size: self.size
+                
+                    style: 'filled'
+                    theme_bg_color: "Custom"
+                    md_bg_color: 0.16, 0.48, 0.32, 1
+
+                    on_release:
+                        app.change_screen('reader'); app.get_data('А. С. Пушкин, "Полтава"', 'div', 'BookReadOnlineContent_online_reading__N3rQ8'); app.btn_press()
+
+                    MDButtonText:
+                        text: 'А. С. Пушкин, "Полтава"'
+                        text_size: (0.07 * root.height, 0.5 * root.width)
+                        halign: 'center'
+                        valign: 'center'
+
+                MDButton:
+                    radius: dp(10)
+                    size_hint: (None, None)
+                    height: 0.07 * root.height
+                    width: 0.5 * root.width
+                    pos_hint: {"center_x": 0.5}
+
+                    style: 'filled'
+                    theme_bg_color: "Custom"
+                    md_bg_color: 0.16, 0.48, 0.32, 1
+
+                    on_release:
+                        app.change_screen('reader'); app.get_data('Д. И. Фонвизин, "Недоросль"', 'div', 'BookReadOnlineContent_online_reading__N3rQ8'); app.btn_press()
+
+                    MDButtonText:
+                        text: 'Д. И. Фонвизин, "Недоросль"'
+                        text_size: (0.07 * root.height, 0.5 * root.width)
+                        halign: 'center'
+                        valign: 'center'
+
+                MDButton:
+                    radius: dp(10)
+                    size_hint: (None, None)
+                    height: 0.07 * root.height
+                    width: 0.5 * root.width
+                    pos_hint: {"center_x": 0.5}
+
+                    style: 'filled'
+                    theme_bg_color: "Custom"
+                    md_bg_color: 0.16, 0.48, 0.32, 1
+
+                    on_release:
+                        app.change_screen('reader'); app.get_data('И. С. Тургенев, "Записки охотника"', 'table', '0'); app.btn_press()
+
+                    MDButtonText:
+                        text: 'И. С. Тургенев, "Записки охотника"'
+                        text_size: (0.07 * root.height, 0.5 * root.width)
+                        halign: 'center'
+                        valign: 'center'
+
+                MDButton:
+                    radius: dp(10)
+                    size_hint: (None, None)
+                    height: 0.07 * root.height
+                    width: 0.5 * root.width
+                    pos_hint: {"center_x": 0.5}
+
+                    style: 'filled'
+                    theme_bg_color: "Custom"
+                    md_bg_color: 0.16, 0.48, 0.32, 1
+
+                    on_release:
+                        app.change_screen('reader'); app.get_data('А. П. Чехов, "Хамелеон"', 'div', 'BookReadOnlineContent_online_reading__N3rQ8'); app.btn_press()
+
+                    MDButtonText:
+                        text: 'А. П. Чехов, "Хамелеон"'
+                        text_size: (0.07 * root.height, 0.5 * root.width)
+                        halign: 'center'
+                        valign: 'center'
+
+                MDButton:
+                    radius: dp(10)
+                    size_hint: (None, None)
+                    height: 0.07 * root.height
+                    width: 0.5 * root.width
+                    pos_hint: {"center_x": 0.5}
+
+                    style: 'filled'
+                    theme_bg_color: "Custom"
+                    md_bg_color: 0.16, 0.48, 0.32, 1
+
+                    on_release:
+                        app.change_screen('reader'); app.get_data('В. А. Жуковский, "Светлана"', 'div', 'BookReadOnlineContent_online_reading__N3rQ8'); app.btn_press()
+
+                    MDButtonText:
+                        text: 'В. А. Жуковский, "Светлана"'
+                        text_size: (0.07 * root.height, 0.5 * root.width)
+                        halign: 'center'
+                        valign: 'center'
+                        
+                MDButton:
+                    radius: dp(10)
+                    size_hint: (None, None)
+                    height: 0.07 * root.height
+                    width: 0.5 * root.width
+                    pos_hint: {"center_x": 0.5}
+
+                    style: 'filled'
+                    theme_bg_color: "Custom"
+                    md_bg_color: 0.16, 0.48, 0.32, 1
+
+                    on_release:
+                        app.change_screen('reader'); app.get_data('Д. Лондон, "Белый Клык"', 'div', 'BookReadOnlineContent_online_reading__N3rQ8'); app.btn_press()
+
+                    MDButtonText:
+                        text: 'Д. Лондон, "Белый Клык"'
+                        text_size: (0.07 * root.height, 0.5 * root.width)
+                        halign: 'left'
+                        valign: 'middle' 
+
+<EighthFScreen>:
+    name: 'eiform'
+
+    MDBoxLayout:
+        orientation: 'vertical'
+        md_bg_color: 0.08, 0.25, 0.16, 1
+
+        CommonHeader:
+            id: common_header
+
+            size_hint_y: None
+            height: dp(40)
+
+        BoxLayout:
+            orientation: 'vertical'
+            size_hint: (1, 1)
+            padding: dp(30)
+            spacing: dp(50)
+            pos_hint: {"center_x": 0.5, "center_y": 0.5}
+
+            BoxLayout:
+                orientation: 'vertical'
+                spacing: dp(40)
+
+                theme_text_color: 'Custom'
+                text_color: 'white'
+
+                MDButton:
+                    radius: dp(10)
+                    size_hint: (None, None)
+                    height: 0.07 * root.height
+                    width: 0.5 * root.width
+                    pos_hint: {"center_x": 0.5}
+
+                    style: 'filled'
+                    theme_bg_color: "Custom"
+                    md_bg_color: 0.16, 0.48, 0.32, 1
+
+                    on_release:
+                        app.change_screen('reader'); app.get_data('А. С. Пушкин, "Капитанская дочка"', 'div', 'BookReadOnlineContent_online_reading__N3rQ8'); app.btn_press()
+
+                    MDButtonText:
+                        text: 'А. С. Пушкин, "Капитанская дочка"'
+                        text_size: (0.07 * root.height, 0.5 * root.width)
+                        halign: 'center'
+                        valign: 'center'
+
+                MDButton:
+                    radius: dp(10)
+                    size_hint: (None, None)
+                    height: 0.07 * root.height
+                    width: 0.5 * root.width
+                    pos_hint: {'center_x': 0.5}
+                    text_size: self.size
+                
+                    style: 'filled'
+                    theme_bg_color: "Custom"
+                    md_bg_color: 0.16, 0.48, 0.32, 1
+
+                    on_release:
+                        app.change_screen('reader'); app.get_data('М. Ю. Лермонтов, "Мцыри"', 'div', 'BookReadOnlineContent_online_reading__N3rQ8'); app.btn_press()
+
+                    MDButtonText:
+                        text: 'М. Ю. Лермонтов, "Мцыри"'
+                        text_size: (0.07 * root.height, 0.5 * root.width)
+                        halign: 'center'
+                        valign: 'center'
+
+                MDButton:
+                    radius: dp(10)
+                    size_hint: (None, None)
+                    height: 0.07 * root.height
+                    width: 0.5 * root.width
+                    pos_hint: {"center_x": 0.5}
+
+                    style: 'filled'
+                    theme_bg_color: "Custom"
+                    md_bg_color: 0.16, 0.48, 0.32, 1
+
+                    on_release:
+                        app.change_screen('reader'); app.get_data('И. С. Тургенев, "Ася"', 'div', 'BookReadOnlineContent_online_reading__N3rQ8'); app.btn_press()
+
+                    MDButtonText:
+                        text: 'И. С. Тургенев, "Ася"'
+                        text_size: (0.07 * root.height, 0.5 * root.width)
+                        halign: 'center'
+                        valign: 'center'
+
+                MDButton:
+                    radius: dp(10)
+                    size_hint: (None, None)
+                    height: 0.07 * root.height
+                    width: 0.5 * root.width
+                    pos_hint: {"center_x": 0.5}
+
+                    style: 'filled'
+                    theme_bg_color: "Custom"
+                    md_bg_color: 0.16, 0.48, 0.32, 1
+
+                    on_release:
+                        app.change_screen('reader'); app.get_data('Л. Н. Толстой, "После бала', 'div', 'BookReadOnlineContent_online_reading__N3rQ8'); app.btn_press()
+
+                    MDButtonText:
+                        text: 'Л. Н. Толстой, "После бала'
+                        text_size: (0.07 * root.height, 0.5 * root.width)
+                        halign: 'center'
+                        valign: 'center'
+
+                MDButton:
+                    radius: dp(10)
+                    size_hint: (None, None)
+                    height: 0.07 * root.height
+                    width: 0.5 * root.width
+                    pos_hint: {"center_x": 0.5}
+
+                    style: 'filled'
+                    theme_bg_color: "Custom"
+                    md_bg_color: 0.16, 0.48, 0.32, 1
+
+                    on_release:
+                        app.change_screen('reader'); app.get_data('У. Шекспир, "Ромео и Джульетта"', 'div', 'BookReadOnlineContent_online_reading__N3rQ8'); app.btn_press()
+
+                    MDButtonText:
+                        text: 'У. Шекспир, "Ромео и Джульетта"'
+                        text_size: (0.07 * root.height, 0.5 * root.width)
+                        halign: 'center'
+                        valign: 'center'
+
+                MDButton:
+                    radius: dp(10)
+                    size_hint: (None, None)
+                    height: 0.07 * root.height
+                    width: 0.5 * root.width
+                    pos_hint: {"center_x": 0.5}
+
+                    style: 'filled'
+                    theme_bg_color: "Custom"
+                    md_bg_color: 0.16, 0.48, 0.32, 1
+
+                    on_release:
+                        app.change_screen('reader'); app.get_data('В. Скотт, "Айвенго"', 'div', 'BookReadOnlineContent_online_reading__N3rQ8'); app.btn_press()
+
+                    MDButtonText:
+                        text: 'В. Скотт, "Айвенго"'
+                        text_size: (0.07 * root.height, 0.5 * root.width)
+                        halign: 'center'
+                        valign: 'center'
+                        
+                MDButton:
+                    radius: dp(10)
+                    size_hint: (None, None)
+                    height: 0.07 * root.height
+                    width: 0.5 * root.width
+                    pos_hint: {"center_x": 0.5}
+
+                    style: 'filled'
+                    theme_bg_color: "Custom"
+                    md_bg_color: 0.16, 0.48, 0.32, 1
+
+                    on_release:
+                        app.change_screen('reader'); app.get_data('У. Шекспир, "Гамлет"', 'div', 'BookReadOnlineContent_online_reading__N3rQ8'); app.btn_press()
+
+                    MDButtonText:
+                        text: 'У. Шекспир, "Гамлет"'
+                        text_size: (0.07 * root.height, 0.5 * root.width)
+                        halign: 'left'
+                        valign: 'middle' 
+
+<NinthFScreen>:
+    name: 'nform'
+
+    MDBoxLayout:
+        orientation: 'vertical'
+        md_bg_color: 0.08, 0.25, 0.16, 1
+
+        CommonHeader:
+            id: common_header
+
+            size_hint_y: None
+            height: dp(40)
+
+        BoxLayout:
+            orientation: 'vertical'
+            size_hint: (1, 1)
+            padding: dp(30)
+            spacing: dp(50)
+            pos_hint: {"center_x": 0.5, "center_y": 0.5}
+
+            BoxLayout:
+                orientation: 'vertical'
+                spacing: dp(40)
+
+                theme_text_color: 'Custom'
+                text_color: 'white'
+
+                MDButton:
+                    radius: dp(10)
+                    size_hint: (None, None)
+                    height: 0.07 * root.height
+                    width: 0.5 * root.width
+                    pos_hint: {"center_x": 0.5}
+
+                    style: 'filled'
+                    theme_bg_color: "Custom"
+                    md_bg_color: 0.16, 0.48, 0.32, 1
+
+                    on_release:
+                        app.change_screen('reader'); app.get_data('Н. М. Карамзин, "Бедная Лиза"', 'div', 'BookReadOnlineContent_online_reading__N3rQ8'); app.btn_press()
+
+                    MDButtonText:
+                        text: 'Н. М. Карамзин, "Бедная Лиза"'
+                        text_size: (0.07 * root.height, 0.5 * root.width)
+                        halign: 'center'
+                        valign: 'center'
+
+                MDButton:
+                    radius: dp(10)
+                    size_hint: (None, None)
+                    height: 0.07 * root.height
+                    width: 0.5 * root.width
+                    pos_hint: {'center_x': 0.5}
+                    text_size: self.size
+                
+                    style: 'filled'
+                    theme_bg_color: "Custom"
+                    md_bg_color: 0.16, 0.48, 0.32, 1
+
+                    on_release:
+                        app.change_screen('reader'); app.get_data('А. С. Грибоедов, "Горе от ума"', 'div', 'BookReadOnlineContent_online_reading__N3rQ8'); app.btn_press()
+
+                    MDButtonText:
+                        text: 'А. С. Грибоедов, "Горе от ума"'
+                        text_size: (0.07 * root.height, 0.5 * root.width)
+                        halign: 'center'
+                        valign: 'center'
+
+                MDButton:
+                    radius: dp(10)
+                    size_hint: (None, None)
+                    height: 0.07 * root.height
+                    width: 0.5 * root.width
+                    pos_hint: {"center_x": 0.5}
+
+                    style: 'filled'
+                    theme_bg_color: "Custom"
+                    md_bg_color: 0.16, 0.48, 0.32, 1
+
+                    on_release:
+                        app.change_screen('reader'); app.get_data('А. С. Пушкин, "Евгений Онегин"', 'div', 'BookReadOnlineContent_online_reading__N3rQ8'); app.btn_press()
+
+                    MDButtonText:
+                        text: 'А. С. Пушкин, "Евгений Онегин"'
+                        text_size: (0.07 * root.height, 0.5 * root.width)
+                        halign: 'center'
+                        valign: 'center'
+
+                MDButton:
+                    radius: dp(10)
+                    size_hint: (None, None)
+                    height: 0.07 * root.height
+                    width: 0.5 * root.width
+                    pos_hint: {"center_x": 0.5}
+
+                    style: 'filled'
+                    theme_bg_color: "Custom"
+                    md_bg_color: 0.16, 0.48, 0.32, 1
+
+                    on_release:
+                        app.change_screen('reader'); app.get_data('М. Ю. Лермонтов, "Герой нашего времени"', 'div', 'BookReadOnlineContent_online_reading__N3rQ8'); app.btn_press()
+
+                    MDButtonText:
+                        text: 'М. Ю. Лермонтов, "Герой нашего времени"'
+                        text_size: (0.07 * root.height, 0.5 * root.width)
+                        halign: 'center'
+                        valign: 'center'
+
+                MDButton:
+                    radius: dp(10)
+                    size_hint: (None, None)
+                    height: 0.07 * root.height
+                    width: 0.5 * root.width
+                    pos_hint: {"center_x": 0.5}
+
+                    style: 'filled'
+                    theme_bg_color: "Custom"
+                    md_bg_color: 0.16, 0.48, 0.32, 1
+
+                    on_release:
+                        app.change_screen('reader'); app.get_data('Н. В. Гоголь, "Мёртвые души"', 'div', 'BookReadOnlineContent_online_reading__N3rQ8'); app.btn_press()
+
+                    MDButtonText:
+                        text: 'Н. В. Гоголь, "Мёртвые души"'
+                        text_size: (0.07 * root.height, 0.5 * root.width)
+                        halign: 'center'
+                        valign: 'center'
+
+                MDButton:
+                    radius: dp(10)
+                    size_hint: (None, None)
+                    height: 0.07 * root.height
+                    width: 0.5 * root.width
+                    pos_hint: {"center_x": 0.5}
+
+                    style: 'filled'
+                    theme_bg_color: "Custom"
+                    md_bg_color: 0.16, 0.48, 0.32, 1
+
+                    on_release:
+                        app.change_screen('reader'); app.get_data('И. С. Тургенев, "Первая любовь"', 'div', 'BookReadOnlineContent_online_reading__N3rQ8'); app.btn_press()
+
+                    MDButtonText:
+                        text: 'И. С. Тургенев, "Первая любовь"'
+                        text_size: (0.07 * root.height, 0.5 * root.width)
+                        halign: 'center'
+                        valign: 'center'
+                        
+                MDButton:
+                    radius: dp(10)
+                    size_hint: (None, None)
+                    height: 0.07 * root.height
+                    width: 0.5 * root.width
+                    pos_hint: {"center_x": 0.5}
+
+                    style: 'filled'
+                    theme_bg_color: "Custom"
+                    md_bg_color: 0.16, 0.48, 0.32, 1
+
+                    on_release:
+                        app.change_screen('reader'); app.get_data('М. А. Шолохов, "Судьба человека"', 'div', 'article-single-content main-page-content'); app.btn_press()
+
+                    MDButtonText:
+                        text: 'М. А. Шолохов, "Судьба человека"'
+                        text_size: (0.07 * root.height, 0.5 * root.width)
+                        halign: 'left'
+                        valign: 'middle' 
+
+<TenthFScreen>:
+    name: 'tform'
+
+    MDBoxLayout:
+        orientation: 'vertical'
+        md_bg_color: 0.08, 0.25, 0.16, 1
+
+        CommonHeader:
+            id: common_header
+
+            size_hint_y: None
+            height: dp(40)
+
+        BoxLayout:
+            orientation: 'vertical'
+            size_hint: (1, 1)
+            padding: dp(30)
+            spacing: dp(50)
+            pos_hint: {"center_x": 0.5, "center_y": 0.5}
+
+            BoxLayout:
+                orientation: 'vertical'
+                spacing: dp(40)
+
+                theme_text_color: 'Custom'
+                text_color: 'white'
+
+                MDButton:
+                    radius: dp(10)
+                    size_hint: (None, None)
+                    height: 0.07 * root.height
+                    width: 0.5 * root.width
+                    pos_hint: {"center_x": 0.5}
+
+                    style: 'filled'
+                    theme_bg_color: "Custom"
+                    md_bg_color: 0.16, 0.48, 0.32, 1
+
+                    on_release:
+                        app.change_screen('reader'); app.get_data('И. А. Гончаров, "Обломов"', 'div', 'BookReadOnlineContent_online_reading__N3rQ8'); app.btn_press()
+
+                    MDButtonText:
+                        text: 'И. А. Гончаров, "Обломов"'
+                        text_size: (0.07 * root.height, 0.5 * root.width)
+                        halign: 'center'
+                        valign: 'center'
+
+                MDButton:
+                    radius: dp(10)
+                    size_hint: (None, None)
+                    height: 0.07 * root.height
+                    width: 0.5 * root.width
+                    pos_hint: {'center_x': 0.5}
+                    text_size: self.size
+                
+                    style: 'filled'
+                    theme_bg_color: "Custom"
+                    md_bg_color: 0.16, 0.48, 0.32, 1
+
+                    on_release:
+                        app.change_screen('reader'); app.get_data('А. И. Островский, "Гроза"', 'div', 'BookReadOnlineContent_online_reading__N3rQ8'); app.btn_press()
+
+                    MDButtonText:
+                        text: 'А. И. Островский, "Гроза"'
+                        text_size: (0.07 * root.height, 0.5 * root.width)
+                        halign: 'center'
+                        valign: 'center'
+
+                MDButton:
+                    radius: dp(10)
+                    size_hint: (None, None)
+                    height: 0.07 * root.height
+                    width: 0.5 * root.width
+                    pos_hint: {"center_x": 0.5}
+
+                    style: 'filled'
+                    theme_bg_color: "Custom"
+                    md_bg_color: 0.16, 0.48, 0.32, 1
+
+                    on_release:
+                        app.change_screen('reader'); app.get_data('И. С. Тургенев, "Отцы и дети"', 'div', 'MsoNormal'); app.btn_press()
+
+                    MDButtonText:
+                        text: 'И. С. Тургенев, "Отцы и дети"'
+                        text_size: (0.07 * root.height, 0.5 * root.width)
+                        halign: 'center'
+                        valign: 'center'
+
+                MDButton:
+                    radius: dp(10)
+                    size_hint: (None, None)
+                    height: 0.07 * root.height
+                    width: 0.5 * root.width
+                    pos_hint: {"center_x": 0.5}
+
+                    style: 'filled'
+                    theme_bg_color: "Custom"
+                    md_bg_color: 0.16, 0.48, 0.32, 1
+
+                    on_release:
+                        app.change_screen('reader'); app.get_data('А. П. Чехов, "Вишнёвый сад"', 'div', 'BookReadOnlineContent_online_reading__N3rQ8'); app.btn_press()
+
+                    MDButtonText:
+                        text: 'А. П. Чехов, "Вишнёвый сад"'
+                        text_size: (0.07 * root.height, 0.5 * root.width)
+                        halign: 'center'
+                        valign: 'center'
+
+                MDButton:
+                    radius: dp(10)
+                    size_hint: (None, None)
+                    height: 0.07 * root.height
+                    width: 0.5 * root.width
+                    pos_hint: {"center_x": 0.5}
+
+                    style: 'filled'
+                    theme_bg_color: "Custom"
+                    md_bg_color: 0.16, 0.48, 0.32, 1
+
+                    on_release:
+                        app.change_screen('reader'); app.get_data('Н. А. Некрасов, "Кому на Руси жить хорошо..."', 'div', 'BookReadOnlineContent_online_reading__N3rQ8'); app.btn_press()
+
+                    MDButtonText:
+                        text: 'Н. А. Некрасов, "Кому на Руси жить хорошо..."'
+                        text_size: (0.07 * root.height, 0.5 * root.width)
+                        halign: 'center'
+                        valign: 'center'
+
+                MDButton:
+                    radius: dp(10)
+                    size_hint: (None, None)
+                    height: 0.07 * root.height
+                    width: 0.5 * root.width
+                    pos_hint: {"center_x": 0.5}
+
+                    style: 'filled'
+                    theme_bg_color: "Custom"
+                    md_bg_color: 0.16, 0.48, 0.32, 1
+
+                    on_release:
+                        app.change_screen('reader'); app.get_data('Ф. М. Достоевский, "Преступление и наказание"', 'div', 'BookReadOnlineContent_online_reading__N3rQ8'); app.btn_press()
+
+                    MDButtonText:
+                        text: 'Ф. М. Достоевский, "Преступление и наказание"'
+                        text_size: (0.07 * root.height, 0.5 * root.width)
+                        halign: 'center'
+                        valign: 'center'
+                        
+                MDButton:
+                    radius: dp(10)
+                    size_hint: (None, None)
+                    height: 0.07 * root.height
+                    width: 0.5 * root.width
+                    pos_hint: {"center_x": 0.5}
+
+                    style: 'filled'
+                    theme_bg_color: "Custom"
+                    md_bg_color: 0.16, 0.48, 0.32, 1
+
+                    on_release:
+                        app.change_screen('reader'); app.get_data('Л. Н. Толстой, "Война и мир"', 'p', '0'); app.btn_press()
+
+                    MDButtonText:
+                        text: 'Л. Н. Толстой, "Война и мир"'
+                        text_size: (0.07 * root.height, 0.5 * root.width)
+                        halign: 'left'
+                        valign: 'middle' 
+
+<EleventhFScreen>:
+    name: 'elform'
+
+    MDBoxLayout:
+        orientation: 'vertical'
+        md_bg_color: 0.08, 0.25, 0.16, 1
+
+        CommonHeader:
+            id: common_header
+
+            size_hint_y: None
+            height: dp(40)
+
+        BoxLayout:
+            orientation: 'vertical'
+            size_hint: (1, 1)
+            padding: dp(30)
+            spacing: dp(50)
+            pos_hint: {"center_x": 0.5, "center_y": 0.5}
+
+            BoxLayout:
+                orientation: 'vertical'
+                spacing: dp(40)
+
+                theme_text_color: 'Custom'
+                text_color: 'white'
+
+                MDButton:
+                    radius: dp(10)
+                    size_hint: (None, None)
+                    height: 0.07 * root.height
+                    width: 0.5 * root.width
+                    pos_hint: {"center_x": 0.5}
+
+                    style: 'filled'
+                    theme_bg_color: "Custom"
+                    md_bg_color: 0.16, 0.48, 0.32, 1
+
+                    on_release:
+                        app.change_screen('reader'); app.get_data('М. А. Булгаков, "Мастер и Маргарита"', 'div', 'MsoNormal'); app.btn_press()
+
+                    MDButtonText:
+                        text: 'М. А. Булгаков, "Мастер и Маргарита"'
+                        text_size: (0.07 * root.height, 0.5 * root.width)
+                        halign: 'center'
+                        valign: 'center'
+
+                MDButton:
+                    radius: dp(10)
+                    size_hint: (None, None)
+                    height: 0.07 * root.height
+                    width: 0.5 * root.width
+                    pos_hint: {'center_x': 0.5}
+                    text_size: self.size
+                
+                    style: 'filled'
+                    theme_bg_color: "Custom"
+                    md_bg_color: 0.16, 0.48, 0.32, 1
+
+                    on_release:
+                        app.change_screen('reader'); app.get_data('М. А. Шолохов, "Тихий Дон" (1 книга)', 'div', 'MsoNormal'); app.btn_press()
+
+                    MDButtonText:
+                        text: 'М. А. Шолохов, "Тихий Дон" (1 книга)'
+                        text_size: (0.07 * root.height, 0.5 * root.width)
+                        halign: 'center'
+                        valign: 'center'
+
+                
+                MDButton:
+                    radius: dp(10)
+                    size_hint: (None, None)
+                    height: 0.07 * root.height
+                    width: 0.5 * root.width
+                    pos_hint: {'center_x': 0.5}
+                    text_size: self.size
+                
+                    style: 'filled'
+                    theme_bg_color: "Custom"
+                    md_bg_color: 0.16, 0.48, 0.32, 1
+
+                    on_release:
+                        app.change_screen('reader'); app.get_data('М. А. Шолохов, "Тихий Дон" (2 книга)', 'div', 'MsoNormal'); app.btn_press()
+
+                    MDButtonText:
+                        text: 'М. А. Шолохов, "Тихий Дон" (2 книга)'
+                        text_size: (0.07 * root.height, 0.5 * root.width)
+                        halign: 'center'
+                        valign: 'center'
+
+                MDButton:
+                    radius: dp(10)
+                    size_hint: (None, None)
+                    height: 0.07 * root.height
+                    width: 0.5 * root.width
+                    pos_hint: {"center_x": 0.5}
+
+                    style: 'filled'
+                    theme_bg_color: "Custom"
+                    md_bg_color: 0.16, 0.48, 0.32, 1
+
+                    on_release:
+                        app.change_screen('reader'); app.get_data('Б. Л. Пастернак, "Доктор Живаго"', 'div', 'MsoNormal'); app.btn_press()
+
+                    MDButtonText:
+                        text: 'Б. Л. Пастернак, "Доктор Живаго"'
+                        text_size: (0.07 * root.height, 0.5 * root.width)
+                        halign: 'center'
+                        valign: 'center'
+
+                MDButton:
+                    radius: dp(10)
+                    size_hint: (None, None)
+                    height: 0.07 * root.height
+                    width: 0.5 * root.width
+                    pos_hint: {"center_x": 0.5}
+
+                    style: 'filled'
+                    theme_bg_color: "Custom"
+                    md_bg_color: 0.16, 0.48, 0.32, 1
+
+                    on_release:
+                        app.change_screen('reader'); app.get_data('А. А. Блок, "Двенадцать"', 'div', 'BookReadOnlineContent_online_reading__N3rQ8'); app.btn_press()
+
+                    MDButtonText:
+                        text: 'А. А. Блок, "Двенадцать"'
+                        text_size: (0.07 * root.height, 0.5 * root.width)
+                        halign: 'center'
+                        valign: 'center'
+
+                MDButton:
+                    radius: dp(10)
+                    size_hint: (None, None)
+                    height: 0.07 * root.height
+                    width: 0.5 * root.width
+                    pos_hint: {"center_x": 0.5}
+
+                    style: 'filled'
+                    theme_bg_color: "Custom"
+                    md_bg_color: 0.16, 0.48, 0.32, 1
+
+                    on_release:
+                        app.change_screen('reader'); app.get_data('А. А. Ахматова, "Реквием"', 'div', 'lsom6 LOB0N Hdwln'); app.btn_press()
+
+                    MDButtonText:
+                        text: 'А. А. Ахматова, "Реквием"'
+                        text_size: (0.07 * root.height, 0.5 * root.width)
+                        halign: 'center'
+                        valign: 'center'
+
+                MDButton:
+                    radius: dp(10)
+                    size_hint: (None, None)
+                    height: 0.07 * root.height
+                    width: 0.5 * root.width
+                    pos_hint: {"center_x": 0.5}
+
+                    style: 'filled'
+                    theme_bg_color: "Custom"
+                    md_bg_color: 0.16, 0.48, 0.32, 1
+
+                    on_release:
+                        app.change_screen('reader'); app.get_data('Е. И. Замятин, "Мы"', 'div', 'MsoNormal'); app.btn_press()
+
+                    MDButtonText:
+                        text: 'Е. И. Замятин, "Мы"'
+                        text_size: (0.07 * root.height, 0.5 * root.width)
+                        halign: 'center'
+                        valign: 'center'
+                        
+                MDButton:
+                    radius: dp(10)
+                    size_hint: (None, None)
+                    height: 0.07 * root.height
+                    width: 0.5 * root.width
+                    pos_hint: {"center_x": 0.5}
+
+                    style: 'filled'
+                    theme_bg_color: "Custom"
+                    md_bg_color: 0.16, 0.48, 0.32, 1
+
+                    on_release:
+                        app.change_screen('reader'); app.get_data('М. Горький, "На дне"', 'div', 'BookReadOnlineContent_online_reading__N3rQ8'); app.btn_press()
+
+                    MDButtonText:
+                        text: 'М. Горький, "На дне"'
+                        text_size: (0.07 * root.height, 0.5 * root.width)
+                        halign: 'left'
+                        valign: 'middle' 
+
+<Reader>:
+    name: 'reader'
+
+    MDBoxLayout:
+        orientation: 'vertical'
+    
+        AnchorLayout:
+            anchor_y: 'top'
+            size_hint_y: None
+            height: dp(40)
+
+            BoxLayout:
+                MDButton:
+                    radius: dp(0)
+                    size_hint: (None, None)
+                    height: dp(40)
+                    width: dp(70)
+                    pos_hint: {'top': 1}
+
+                    style: 'filled'
+                    theme_bg_color: "Custom"
+                    md_bg_color: 0.16, 0.48, 0.32, 1
+
+                    on_release:
+                        app.previous_page()
+                                
+                    MDButtonText:
+                        text: 'Пред. стр.'
+                        theme_text_color: "Custom"
+                        text_color: 'white'
+                        
+                MDLabel:
+                    id: header_label
+
+                    text: app.label_text
+                    halign: 'center'
+                    text_color: 'white'
+                    style: 'filled'
+                    theme_bg_color: "Custom"
+                    md_bg_color: 0.24, 0.71, 0.48, 1
+
+                MDButton:
+                    radius: dp(0)
+                    size_hint: (None, None)
+                    height: dp(40)
+                    width: dp(70)
+                    pos_hint: {'top': 1}
+
+                    style: 'filled'
+                    theme_bg_color: "Custom"
+                    md_bg_color: 0.16, 0.48, 0.32, 1
+
+                    on_release:
+                        app.next_page()
+                                
+                    MDButtonText:
+                        text: 'След. стр.'
+                        theme_text_color: "Custom"
+                        text_color: 'white'
+
+                MDButton:
+                    radius: dp(0)
+                    size_hint: (None, None)
+                    height: dp(40)
+                    width: dp(70)
+                    pos_hint: {'top': 1}
+
+                    style: 'filled'
+                    theme_bg_color: "Custom"
+                    md_bg_color: 0.16, 0.48, 0.32, 1
+
+                    on_release:
+                        app.change_screen('main')
+                                
+                    MDButtonText:
+                        text: 'Назад'
+                        theme_text_color: "Custom"
+                        text_color: 'white'
+
+        ScrollableLabel:
+            id: scrollable_label
+
+            MDLabel:
+                id: work_label
+
+                size_hint: (None, None)
+                height: self.texture_size[1]
+                width: root.width
+
+                theme_bg_color: "Custom"
+                md_bg_color: 0.08, 0.25, 0.16, 1
+
+                text: root.work_text
+                text_size: self.width, None
+                theme_text_color: "Custom"
+                text_color: 'white'
+                halign: 'left'
+                valign: 'top'
+                padding: dp(10), dp(10)
+
+<Config>:
+    name: 'config'
+
+    MDBoxLayout:
+        orientation: 'vertical'
+        md_bg_color: 0.08, 0.25, 0.16, 1
+
+        MDBoxLayout:
+            size_hint_y: None
+            height: dp(40)
+
+            MDButton:
+                radius: dp(0)
+                size_hint: None, None
+                height: dp(40)
+                width: dp(80)
+                pos_hint: {'top': 1}
+                theme_bg_color: "Custom"
+                md_bg_color: 0.16, 0.48, 0.32, 1
+
+                on_release:
+                    app.change_screen('main')
+
+                MDButtonText:
+                    theme_text_color: "Custom"
+                    text_color: 'white'
+                    text_size: self.size
+                    halign: 'center'
+                    valign: 'center'
+                    text: 'Назад'
+
+            MDLabel:
+                theme_bg_color: "Custom"
+                md_bg_color: 0.24, 0.71, 0.48, 1
+                text_size: self.size
+                text: 'Настройки'
+                halign: 'center'
+                valign: 'center'
+                theme_text_color: "Custom"
+                text_color: 'white'
+
+        MDBoxLayout:
+            orientation: 'vertical'
+            height: dp(80)
+            padding: dp(30)
+            spacing: dp(30)
+
+            MDLabel:
+                text: 'Спасибо за использование нашего приложения! Следите за обновлениями!'
+                halign: 'center'
+                theme_text_color: "Custom"
+                text_color: 'white'
+                text_size: self.size
+                halign: 'center'
+                valign: 'center'
+                pos_hint: {'center_x': 0.5, 'center_y': 1}
+                size_hint: (1, None)
+                height: dp(50)
+                theme_bg_color: "Custom"
+                md_bg_color: 0.16, 0.48, 0.32, 1
+
+            # AnchorLayout:
+            #     anchor_x: 'center'
+            #     anchor_y: 'center'
+
+            #     GridLayout:
+            #         cols: 2
+            #         size_hint: None, None
+            #         size: dp(300), dp(100)
+            #         padding: dp(30)
+            #         spacing: dp(30)
+
+            #         MDButton:
+            #             radius: dp(10)
+            #             size_hint: None, None
+            #             size: dp(120), dp(50)
+            #             theme_bg_color: "Custom"
+            #             md_bg_color: 0.16, 0.48, 0.32, 1
+
+            #             on_release:
+            #                 app.change_color('green')
+
+            #             MDButtonText:
+            #                 text_size: self.size
+            #                 halign: 'center'
+            #                 valign: 'center'
+            #                 text: "Зелёная"
+            #                 theme_text_color: "Custom"
+            #                 text_color: 'white'
+
+            #         MDButton:
+            #             radius: dp(10)
+            #             size_hint: None, None
+            #             size: dp(120), dp(50)
+            #             theme_bg_color: "Custom"
+            #             md_bg_color: 0.16, 0.48, 0.32, 1
+
+            #             on_release:
+            #                 app.change_color('white')
+
+            #             MDButtonText:
+            #                 text_size: self.size
+            #                 halign: 'center'
+            #                 valign: 'center'
+            #                 text: "Белая"
+            #                 theme_text_color: "Custom"
+            #                 text_color: 'white'
+
+            #         MDButton:
+            #             radius: dp(10)
+            #             size_hint: None, None
+            #             size: dp(120), dp(50)
+            #             theme_bg_color: "Custom"
+            #             md_bg_color: 0.16, 0.48, 0.32, 1
+
+            #             on_release:
+            #                 app.change_color('blue')
+
+            #             MDButtonText:
+            #                 text_size: self.size
+            #                 halign: 'center'
+            #                 valign: 'center'
+            #                 text: "Голубая"
+            #                 theme_text_color: "Custom"
+            #                 text_color: 'white'
+
+            #         MDButton:
+            #             radius: dp(10)
+            #             size_hint: None, None
+            #             size: dp(120), dp(50)
+            #             theme_bg_color: "Custom"
+            #             md_bg_color: 0.16, 0.48, 0.32, 1
+
+            #             on_release:
+            #                 app.change_color('black')
+
+            #             MDButtonText:
+            #                 text_size: self.size
+            #                 halign: 'center'
+            #                 valign: 'center'
+            #                 text: "Чёрная"
+            #                 theme_text_color: "Custom"
+            #                 text_color: 'white'
