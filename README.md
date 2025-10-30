@@ -1,1 +1,1 @@
-Some shit on python and kivy
+First try to create mobile app using python and kivy
